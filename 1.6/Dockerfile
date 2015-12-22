@@ -26,5 +26,5 @@ RUN buildDeps='curl gcc libc6-dev libpcre3-dev libssl-dev make' \
 	&& cp -R /usr/src/haproxy/examples/errorfiles /usr/local/etc/haproxy/errors \
 	&& rm -rf /usr/src/haproxy \
 	&& apt-get purge -y --auto-remove $buildDeps
-
+EXPOSE 1990
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
